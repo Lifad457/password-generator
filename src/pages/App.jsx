@@ -1,5 +1,5 @@
 import './app.css.js';
-import '../utils';
+import '../utils.js';
 import Container from '../components/Container';
 import { Canvas } from './app.css.js';
 
