@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { SigneMoins, SignePlus, Wrapper } from './container.css';
+import '../utils';
 
 function Container() {
 	const [password, setPassword] = useState('');
