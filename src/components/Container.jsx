@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { SigneMoins, SignePlus, Wrapper } from './container.css';
-import '../utils';
 
 function Container() {
 	const [password, setPassword] = useState('');
@@ -84,28 +83,28 @@ function Container() {
 					id='majuscule'
 					type='checkbox'
 					checked={majuscule}
-					onClick={() => setMajuscule(!majuscule)}
+					onChange={() => setMajuscule(!majuscule)}
 				/>
 				<label htmlFor='majuscule'>ABC</label>
 				<input
 					id='minuscule'
 					type='checkbox'
 					checked={minuscule}
-					onClick={() => setMinuscule(!minuscule)}
+					onChange={() => setMinuscule(!minuscule)}
 				/>
 				<label htmlFor='minuscule'>abc</label>
 				<input
 					id='nombre'
 					type='checkbox'
 					checked={nombre}
-					onClick={() => setNombre(!nombre)}
+					onChange={() => setNombre(!nombre)}
 				/>
 				<label htmlFor='nombre'>123</label>
 				<input
 					id='special'
 					type='checkbox'
 					checked={special}
-					onClick={() => setSpecial(!special)}
+					onChange={() => setSpecial(!special)}
 				/>
 				<label htmlFor='special'>#$&</label>
 			</section>
