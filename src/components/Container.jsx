@@ -3,14 +3,14 @@ import { SigneMoins, SignePlus, Wrapper } from './container.css';
 
 function Container() {
 	const [password, setPassword] = useState('');
-	const [length, setLength] = useState(8);
+	const [longueur, setLongueur] = useState(8);
 	const [majuscule, setMajuscule] = useState(true);
 	const [minuscule, setMinuscule] = useState(true);
 	const [nombre, setNombre] = useState(true);
 	const [special, setSpecial] = useState(true);
 
 	function handleChange(e) {
-		setLength(e.target.value);
+		setLongueur(parseInt(e.target.value));
 	}
 
 	function copyToClipboard() {
@@ -37,7 +37,7 @@ function Container() {
 			if (special) characters += symbols;
 
 			let password = '';
-			for (let i = 0; i < length; i++) {
+			for (let i = 0; i < longueur; i++) {
 				password += characters.charAt(
 					Math.floor(Math.random() * characters.length)
 				);
@@ -45,7 +45,7 @@ function Container() {
 			setPassword(password);
 		};
 		generatePassword();
-	}, [length, majuscule, minuscule, nombre, special]);
+	}, [longueur, majuscule, minuscule, nombre, special]);
 
 	return (
 		<Wrapper>
@@ -62,19 +62,19 @@ function Container() {
 			</section>
 			<section className='range'>
 				<label>Longueur mot de passe : </label>
-				<span>{` ${length}`}</span>
+				<span>{` ${longueur}`}</span>
 				<SigneMoins
-					onClick={() => length > 8 && setLength(length - 1)}
+					onClick={() => longueur > 8 && setLongueur(longueur - 1)}
 				/>
 				<input
 					type='range'
 					min='8'
 					max='18'
-					value={length}
+					value={longueur}
 					onChange={handleChange}
 				/>
 				<SignePlus
-					onClick={() => length < 18 && setLength(length + 1)}
+					onClick={() => longueur < 18 && setLongueur(longueur + 1)}
 				/>
 			</section>
 			<section>
